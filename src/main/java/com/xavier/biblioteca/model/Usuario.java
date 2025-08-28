@@ -2,6 +2,8 @@ package com.xavier.biblioteca.model;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "tb_usuario")
 public class Usuario {
@@ -9,28 +11,23 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idUsuario;
+
     private String nome;
 
-    private Usuario() {
+    @OneToMany(mappedBy = "usuario")
+    private List<Emprestimo> emprestimos;
+
+    public Usuario() {
     }
-    public Usuario(Long idUsuario, String nome) {
-        this.idUsuario = idUsuario;
+
+    public Usuario(String nome) {
         this.nome = nome;
     }
 
-    public Long getIdUsuario() {
-        return idUsuario;
-    }
-
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+    public Long getIdUsuario() { return idUsuario; }
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+    public List<Emprestimo> getEmprestimos() { return emprestimos; }
+    public void setEmprestimos(List<Emprestimo> emprestimos) { this.emprestimos = emprestimos; }
 }
+
