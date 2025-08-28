@@ -16,15 +16,20 @@ public class Livro {
     private String genero;
     private StatusEnum status;
 
+    @ManyToOne
+    @JoinColumn(name = "autor_id")
+    private Autor autor;
+
     public class livro {
     }
 
-    public Livro(Long idLivro, String titulo, Integer anoPublicacao, String genero, StatusEnum status) {
+    public Livro(Long idLivro, String titulo, Integer anoPublicacao, String genero, StatusEnum statusm,Autor autor) {
         this.idLivro = idLivro;
         this.titulo = titulo;
         this.anoPublicacao = anoPublicacao;
         this.genero = genero;
         this.status = status;
+        this.autor = autor;
     }
 
     public Long getIdLivro() {
@@ -65,5 +70,13 @@ public class Livro {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
     }
 }
