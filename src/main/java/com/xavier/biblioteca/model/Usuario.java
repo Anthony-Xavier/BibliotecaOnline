@@ -1,5 +1,6 @@
 package com.xavier.biblioteca.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class Usuario {
     private String nome;
 
     @OneToMany(mappedBy = "usuario")
+    @JsonIgnore
     private List<Emprestimo> emprestimos;
 
     public Usuario() {

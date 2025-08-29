@@ -1,5 +1,7 @@
 package com.xavier.biblioteca.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.xavier.biblioteca.enums.StatusEnum;
 import jakarta.persistence.*;
 
@@ -16,13 +18,17 @@ public class Livro {
     private String titulo;
     private Integer anoPublicacao;
     private String genero;
+
+    @Enumerated(EnumType.STRING)
     private StatusEnum status;
 
     @ManyToOne
     @JoinColumn(name = "autor_id")
+    @JsonBackReference
     private Autor autor;
 
     @OneToMany(mappedBy = "livro")
+    @JsonIgnore
     private List<Emprestimo> emprestimos; // histórico de empréstimos
 
     public Livro() {

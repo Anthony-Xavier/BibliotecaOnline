@@ -13,7 +13,7 @@ import java.util.List;
 public class EmprestimoController {
 
     @Autowired
-    public EmprestimoService emprestimoService;
+    private EmprestimoService emprestimoService;
 
     //crar emprestimo
     @PostMapping

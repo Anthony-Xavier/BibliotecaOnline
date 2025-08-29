@@ -42,4 +42,7 @@ public class UsuarioService {
         return usuario.getEmprestimos();
     }
 
+    public List<Usuario> listarUsuarios() {
+        return usuarioRepository.findAll();
+    }
 }

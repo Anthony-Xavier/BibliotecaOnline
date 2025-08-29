@@ -14,7 +14,7 @@ import java.util.List;
 public class AutorController {
 
     @Autowired
-    public AutorService autorService;
+    private AutorService autorService;
 
     // Cadastrar autor
     @PostMapping

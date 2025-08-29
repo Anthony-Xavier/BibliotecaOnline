@@ -1,5 +1,6 @@
 package com.xavier.biblioteca.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -14,7 +15,8 @@ public class Autor {
 
     private String name;
 
-    @OneToMany(mappedBy = "autor")
+    @OneToMany(mappedBy = "autor",cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Livro> livros;
 
     public Autor() {
