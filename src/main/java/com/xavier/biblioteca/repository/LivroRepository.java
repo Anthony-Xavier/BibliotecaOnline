@@ -7,9 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface EmprestimoRepository extends JpaRepository<Emprestimo , Long> {
-    // Lista todos os empréstimos de um determinado livro
-    List<Emprestimo> findByLivro(Livro livro);
-
-    List<Emprestimo> findByUsuario(Usuario usuario);
+public interface LivroRepository extends JpaRepository<Livro, Long> {
+    List<Livro> findByAutorId(Long autorId);
 }
