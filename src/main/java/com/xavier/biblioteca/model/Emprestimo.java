@@ -10,7 +10,7 @@ public class Emprestimo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idEmprestimo;
+    private Long id;
 
     private LocalDate dataEmprestimo;
     private LocalDate dataPrevistaDevolucao;
@@ -27,7 +27,7 @@ public class Emprestimo {
     public Emprestimo() {
     }
 
-    public Emprestimo(Long idEmprestimo, LocalDate dataEmprestimo, LocalDate dataPrevistaDevolucao, LocalDate dataDevolucao, Usuario usuario, Livro livro) {
+    public Emprestimo(Long id, LocalDate dataEmprestimo, LocalDate dataPrevistaDevolucao, LocalDate dataDevolucao, Usuario usuario, Livro livro) {
         this.dataEmprestimo = dataEmprestimo;
         this.dataPrevistaDevolucao = dataPrevistaDevolucao;
         this.dataDevolucao = dataDevolucao;
@@ -35,7 +35,7 @@ public class Emprestimo {
         this.livro = livro;
     }
 
-    public Long getIdEmprestimo() { return idEmprestimo; }
+    public Long getId() { return id; }
     public LocalDate getDataEmprestimo() { return dataEmprestimo; }
     public void setDataEmprestimo(LocalDate dataEmprestimo) { this.dataEmprestimo = dataEmprestimo; }
     public LocalDate getDataPrevistaDevolucao() { return dataPrevistaDevolucao; }

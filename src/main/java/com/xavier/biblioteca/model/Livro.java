@@ -11,7 +11,7 @@ import java.util.List;
 public class Livro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idLivro;
+    private Long id;
 
     private String titulo;
     private Integer anoPublicacao;
@@ -36,7 +36,7 @@ public class Livro {
         this.autor = autor;
     }
 
-    public Long getIdLivro() { return idLivro; }
+    public Long getId() { return id; }
     public String getTitulo() { return titulo; }
     public void setTitulo(String titulo) { this.titulo = titulo; }
     public Integer getAnoPublicacao() { return anoPublicacao; }

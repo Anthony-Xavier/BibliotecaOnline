@@ -10,7 +10,7 @@ public class Autor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idAutor;
+    private Long id;
 
     private String name;
 
@@ -23,7 +23,7 @@ public class Autor {
         this.name = name;
     }
 
-    public Long getIdAutor() { return idAutor; }
+    public Long getId() { return id; }
     public String getNome() { return name; }
     public void setNome(String nome) { this.name = name; }
     public List<Livro> getLivros() { return livros; }
