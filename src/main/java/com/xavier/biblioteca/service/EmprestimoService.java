@@ -19,8 +19,10 @@ public class EmprestimoService {
 
     @Autowired
     EmprestimoRepository emprestimoRepository;
+
     @Autowired
     UsuarioRepository  usuarioRepository;
+
     @Autowired
     LivroRepository livroRepository;
 

@@ -24,8 +24,8 @@ public class Autor {
     }
 
     public Long getId() { return id; }
-    public String getNome() { return name; }
-    public void setNome(String nome) { this.name = name; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
     public List<Livro> getLivros() { return livros; }
     public void setLivros(List<Livro> livros) { this.livros = livros; }
 }
